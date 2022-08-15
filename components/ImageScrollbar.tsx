@@ -3,6 +3,9 @@ import Image from "next/image";
 import { Box, Icon, Flex } from "@chakra-ui/react";
 import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
+interface IProps {
+  data: any;
+}
 
 const LeftArrow = () => {
   const { scrollPrev } = useContext(VisibilityContext);
@@ -35,7 +38,8 @@ const RightArrow = () => {
     </Flex>
   );
 };
-export default function ImageSrollbar({ data }) {
+const ImageScrollbar = ({ data }: IProps) => {
+  //export default function ImageSrollbar({ data }) {
   return (
     <ScrollMenu
       LeftArrow={LeftArrow}
@@ -64,4 +68,5 @@ export default function ImageSrollbar({ data }) {
       ))}
     </ScrollMenu>
   );
-}
+};
+export default ImageScrollbar;
