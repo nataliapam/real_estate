@@ -44,12 +44,12 @@ const ImageScrollbar = ({ data }: IProps) => {
     <ScrollMenu
       LeftArrow={LeftArrow}
       RightArrow={RightArrow}
-      style={{ overflow: "hidden" }}
+      //  style={{ overflow: "hidden" }}
     >
       {data.map((item: any, index: number) => (
         <Box
           width="910px"
-          itemId={item.id}
+          id={item.id}
           overflow="hidden"
           p="1"
           key={"box" + index}
