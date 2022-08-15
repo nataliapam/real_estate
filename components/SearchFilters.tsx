@@ -20,7 +20,7 @@ import noresult from "../assets/images/noresult.svg";
 export default function SearchFilters() {
   const [filters] = useState(filterData);
   const [searchTerm, setSearchTerm] = useState("");
-  const [locationData, setLocationData] = useState();
+  const [locationData, setLocationData] = useState([]);
   const [showLocations, setShowLocations] = useState(false);
   const [loading, setLoading] = useState(false);
   const router = useRouter();
@@ -108,28 +108,29 @@ export default function SearchFilters() {
             {loading && <Spinner margin="auto" marginTop="3" />}
             {showLocations && (
               <Box height="300px" overflow="auto">
-                {locationData?.map((location) => (
-                  <Box
-                    key={location.id}
-                    onClick={() => {
-                      searchProperties({
-                        locationExternalIDs: location.externalID,
-                      });
-                      setShowLocations(false);
-                      setSearchTerm(location.name);
-                    }}
-                  >
-                    <Text
-                      cursor="pointer"
-                      bg="gray.200"
-                      p="2"
-                      borderBottom="1px"
-                      borderColor="gray.100"
+                {locationData &&
+                  locationData.map((location: any) => (
+                    <Box
+                      key={location.id}
+                      onClick={() => {
+                        searchProperties({
+                          locationExternalIDs: location.externalID,
+                        });
+                        setShowLocations(false);
+                        setSearchTerm(location.name);
+                      }}
                     >
-                      {location.name}
-                    </Text>
-                  </Box>
-                ))}
+                      <Text
+                        cursor="pointer"
+                        bg="gray.200"
+                        p="2"
+                        borderBottom="1px"
+                        borderColor="gray.100"
+                      >
+                        {location.name}
+                      </Text>
+                    </Box>
+                  ))}
                 {!loading && !locationData?.length && (
                   <Flex
                     justifyContent="center"

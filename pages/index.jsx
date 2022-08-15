@@ -1,11 +1,11 @@
-import type { NextPage } from "next";
+//import type { NextPage } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { Flex, Box, Text, Button } from "@chakra-ui/react";
 import { baseUrl, fetchApi } from "../utils/fetchData";
 import Property from "../components/Property";
 
-interface IProps {
+/*interface IProps {
   purpose: string;
   imageUrl: string;
   title1: string;
@@ -14,7 +14,7 @@ interface IProps {
   buttonText: string;
   desc1: string;
   desc2: string;
-}
+}*/
 const Banner = ({
   purpose,
   imageUrl,
@@ -24,7 +24,7 @@ const Banner = ({
   buttonText,
   desc1,
   desc2,
-}: IProps) => {
+} /*: IProps*/) => {
   return (
     <Flex flexWrap="wrap" justifyContent="center" alignItems="center" m="10">
       <Image src={imageUrl} width={500} height={300} alt="banner" />
@@ -49,7 +49,7 @@ const Banner = ({
   );
 };
 
-const Home: NextPage = ({ propertiesForSale, propertiesForRent }) => {
+const Home/*: NextPage*/ = ({ propertiesForSale, propertiesForRent }) => {
   return (
     <Box>
       <Banner
@@ -63,7 +63,7 @@ const Home: NextPage = ({ propertiesForSale, propertiesForRent }) => {
         imageUrl="https://bayut-production.s3.eu-central-1.amazonaws.com/image/145426814/33973352624c48628e41f2ec460faba4"
       />
       <Flex flexWrap="wrap">
-        {propertiesForRent.map((property: any) => (
+        {propertiesForRent.map((property /*: any*/) => (
           <Property property={property} key={property.id} />
         ))}
       </Flex>
@@ -78,7 +78,7 @@ const Home: NextPage = ({ propertiesForSale, propertiesForRent }) => {
         imageUrl="https://bayut-production.s3.eu-central-1.amazonaws.com/image/110993385/6a070e8e1bae4f7d8c1429bc303d2008"
       />
       <Flex flexWrap="wrap">
-        {propertiesForSale.map((property: any) => (
+        {propertiesForSale.map((property /*: any*/) => (
           <Property property={property} key={property.id} />
         ))}
       </Flex>
