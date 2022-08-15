@@ -53,7 +53,7 @@ const Search = ({ properties }: IProps) => {
           marginTop="5"
           marginBottom="5"
         >
-          <Image src={noresult} />
+          <Image src={noresult} alt="notFound" />
           <Text fontSize="xl" marginTop="3">
             No Result Found.
           </Text>

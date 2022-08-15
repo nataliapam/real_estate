@@ -39,6 +39,7 @@ const Property = ({ property }: IProps) => {
             src={coverPhoto ? coverPhoto.url : defaultImage}
             width={400}
             height={260}
+            alt={"Flat" + externalID}
           />
         </Box>
         <Box w="full">

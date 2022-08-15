@@ -14,7 +14,7 @@ const LeftArrow = () => {
         onClick={() => scrollPrev()}
         fontSize="2xl"
         cursor="pointer"
-        d={["none", "none", "none", "block"]}
+        //  d={["none", "none", "none", "block"]}
       />
     </Flex>
   );
@@ -51,6 +51,7 @@ export default function ImageSrollbar({ data }) {
           key={"box" + index}
         >
           <Image
+            alt={item.url}
             key={"image" + index}
             placeholder="blur"
             blurDataURL={item.url}
